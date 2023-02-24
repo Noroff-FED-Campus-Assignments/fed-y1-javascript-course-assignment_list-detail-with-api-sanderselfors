@@ -4,35 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
-    />
-    <meta name="author" content="_YOUR_NAME_" />
+    <meta name="description" content="This is the contactpage" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, API" />
+    <meta name="author" content="Sander Selfors" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>Contact Us | _REPLACE_SITE_NAME</title>
+    <script type="module" src="/src/js/contact.js"></script>
+    <title>Contact Us</title>
   </head>
-  <body class="animate__animated animate__fadeIn">
+  <body>
     <header class="l-header">
       <h1>Contact Us</h1>
+      <div class="nav">
+        <a href="../index.html">All characters</a>
+      </div>
     </header>
 
     <main class="l-main">
-      <article role="doc-introduction">
-        <h2>Contact form</h2>
-
-        <p>_REPLACE_INTRODUCTION_</p>
-      </article>
+      <article role="doc-introduction"></article>
+      <h2>How can we help you?</h2>
 
       <section role="form-section">
-        <!-- TODO: Creat Form elements here -->
+        <p id="message" class="errormessage"></p>
+
+        <form class="contactform" id="form" autocomplete="on">
+          <div class="formcontainer">
+            <label for="name">Name</label>
+            <input type="text" id="name" required />
+            <p class="formvalidation" data-id="validationmessage"></p>
+          </div>
+
+          <div class="contactform">
+            <label for="subject">Subject</label>
+            <input type="subject" id="subject" required />
+            <p class="formvalidation" data-id="validationmessage"></p>
+          </div>
+
+          <div class="contactform">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+            <p class="formvalidation" data-id="validationmessage"></p>
+          </div>
+
+          <div class="contactform">
+            <label for="address">Address</label>
+            <input type="address" id="address" required />
+            <p class="formvalidation" data-id="validationmessage"></p>
+          </div>
+
+          <button type="reset" class="resetbutton">Reset</button>
+          <button type="submit" class="submitbutton">Submit</button>
+        </form>
       </section>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created by Sander Selfors</small>
     </footer>
   </body>
 </html>

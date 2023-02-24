@@ -1,46 +1,30 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const detailsResults = document.querySelector(".character-details");
 
-// TODO: Get DOM elements from the DOM
+const queryString = document.location.search;
 
-// TODO: Get the query parameter from the URL
+const parameters = new URLSearchParams(queryString);
 
-// TODO: Get the id from the query parameter
+const id = parameters.get("id");
 
-// TODO: Create a new URL with the id @example: https://www.youtube.com/shorts/ps7EkRaRMzs
+const GOTurl = "https://thronesapi.com/api/v2/Characters/" + id ;
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+async function getCharacterDetails() {
+  try {
+    const response = await fetch(GOTurl);
+    const characterdetails = await response.json();
 
-// TODO: Fetch and Render the lsit to the DOM
+    document.title = `${characterdetails.fullName} info`;
+      detailsResults.innerHTML = `
+        <h1>${characterdetails.fullName}</h1>
+        <div class="details-image" style="background-image: url('${characterdetails.imageUrl}')"></div>
+        <div class="details-firstname">First name: ${characterdetails.firstName}</div>
+        <div class="details-lastname">Last name: ${characterdetails.lastName}</div>
+        <div class="details-title">Title: ${characterdetails.title}</div>
+        <div class="details-family">Family: ${characterdetails.family}</div>`;
 
-// TODO: Create event listeners for the filters and the search
+  } catch (error) {
+    detailsResults.innerHTML = ("Something went wrong while fetching the API");
+  }
+}
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
-
-// TODO: Fetch an a single of objects from the API
-
-/*
-============================================
-Helper functions
-============================================
-*/
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+getCharacterDetails();

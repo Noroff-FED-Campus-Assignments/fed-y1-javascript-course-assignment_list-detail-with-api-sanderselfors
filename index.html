@@ -4,37 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
-    <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
-    />
-    <meta name="author" content="_YOUR_NAME_" />
+    <meta name="description" content="Homepage with a list of characters" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, API" />
+    <meta name="author" content="Sander Selfors" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
+    <script type="module" src="/src/js/app.js"></script>
+    <title>Game of Thrones Characters</title>
   </head>
-  <body class="animate__animated animate__fadeIn">
+  <body>
     <header class="l-header">
       <h1>Home</h1>
+      <div class="nav">
+        <a href="../contact.html">Contact</a>
+      </div>
     </header>
 
     <main class="l-main">
-      <section role="search"></section>
-
       <article role="doc-introduction">
-        <h2>List</h2>
-
-        <p>_REPLACE_INTRODUCTION_</p>
+        <h2>Game of Thrones Characters</h2>
       </article>
 
+      <input
+        type="text"
+        id="search"
+        class="searchbar"
+        placeholder="Search characters, title, family..."
+      />
+
       <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+        <div id="js-list-container"></div>
+        <div class="allcharacters">
+          <div class="loading-anime"></div>
+        </div>
       </section>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created by Sander Selfors</small>
     </footer>
   </body>
 </html>
