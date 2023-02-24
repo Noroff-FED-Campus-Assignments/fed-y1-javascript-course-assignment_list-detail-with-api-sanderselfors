@@ -10,3 +10,17 @@
 .is-visible {
   opacity: 1;
 }
+
+.error-occurred {
+  border: 1px solid var(--primary-colour);
+  color: var(--primary-colour);
+  background: var(--light-grey);
+}
+
+.successfull {
+  border: 1px solid var(--primary-colour);
+  color: var(--primary-colour);
+  background: var(--light-grey);
+}
+
+

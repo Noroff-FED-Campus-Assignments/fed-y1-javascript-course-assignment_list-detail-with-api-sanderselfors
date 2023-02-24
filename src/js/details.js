@@ -15,7 +15,7 @@ async function getCharacterDetails() {
 
     document.title = `${characterdetails.fullName} info`;
       detailsResults.innerHTML = `
-        <h1>${characterdetails.fullName}</h1>
+        <h2>${characterdetails.fullName}</h2>
         <div class="details-image" style="background-image: url('${characterdetails.imageUrl}')"></div>
         <div class="details-firstname">First name: ${characterdetails.firstName}</div>
         <div class="details-lastname">Last name: ${characterdetails.lastName}</div>
