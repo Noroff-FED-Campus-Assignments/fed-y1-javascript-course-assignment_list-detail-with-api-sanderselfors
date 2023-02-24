@@ -12,15 +12,29 @@
 }
 
 .error-occurred {
-  border: 1px solid var(--primary-colour);
+  border: 2px solid var(--primary-colour);
   color: var(--primary-colour);
   background: var(--light-grey);
 }
 
 .successfull {
-  border: 1px solid var(--primary-colour);
+  border: 2px solid var(--primary-colour);
   color: var(--primary-colour);
   background: var(--light-grey);
+}
+
+.submitbutton:hover {
+  border: 2px solid var(--primary-colour);
+  color: var(--primary-colour);
+  background: var(--light-grey);
+  background-color: white;
+}
+
+.resetbutton:hover {
+  border: 2px solid var(--primary-colour);
+  color: var(--primary-colour);
+  background: var(--light-grey);
+  background-color: white;
 }
 
 
