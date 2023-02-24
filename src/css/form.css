@@ -1,15 +1,55 @@
-/*!
- * Forms
- * form classes use the c- prefix to indicate they are components used in layout.
- * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
- */
 
-.c-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: var(--spacing-1);
-  padding: var(--spacing-1);
-  background-color: var(--color-white);
-  border-radius: var(--radius-1);
-  box-shadow: var(--shadow-1);
+ .contactform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.contactform input {
+  min-height: 34px;
+  min-width: 200px;
+  width: 300px;
+  max-width: 800px;
+  border-radius: 0.3rem;
+}
+
+.contactform input:is(:hover, :active) {
+  border-color: rgb(60, 0, 255);
+}
+
+input.error-occurred {
+  border-color: rgb(255, 0, 0);
+}
+
+input.successfull {
+  border-color: #00ff04;
+}
+
+button {
+  width: 250px;
+  height: 30px;
+  margin-left: 24px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: white;
+  
+}
+button:hover {
+  transition: 200ms;
+}
+
+.submitbutton:hover {
+  border-color: #00ff04;
+}
+
+.submitbutton {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.resetbutton:hover {
+  border-color: red;
+
 }

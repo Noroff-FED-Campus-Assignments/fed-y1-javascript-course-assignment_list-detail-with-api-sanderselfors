@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10190804&assignment_repo_type=AssignmentRepo)
+
 # FED Javascript 1 - Course Assignment
 
 This is a vanilla website that displays a list of items fetched from an API.
@@ -10,11 +11,20 @@ This project was bootstrapped with Vite.
 - [Design](_LINK_TO_FIGMA_)
 - [Production deploy](_LINK_TO_WEBSITE_)
 - [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
-- [API Docs](_LINK_TO_API_DOCS_)
+- [API Docs](https://thronesapi.com/swagger/index.html?urls.primaryName=Game%20of%20Thrones%20API%20v2)
 
 ## Report
 
-_ADD_YOUR_REPORT_HERE_
+For this Course Assignment I have written a code that fetches data from an API and displays it on a webpage. The data is a list of characters from the popular TV show "Game of Thrones».
+
+My index-page initializes two variables, "characterResults" and "searchInput", and sets up an event listener for the search bar. When the user types into the search bar, the "filterCharacters" function is called and filters the character data based on the user's input.
+The "getCharacters" function fetches data from the API and displays it on the page. The data is stored in an array called "characterslist" and displayed using a forEach loop to create a character card for each character. Each card contains the character's image, name, title, and family.
+
+My details-page displays details about a specific character when the user clicks on a character card. The code extracts the character's ID from the URL using the "URLSearchParams" function, fetches the character's data from the API using the ID, and displays it on the page.
+
+My third page is my contact-page. It initializes variables for each input field and sets up event listeners for validation. When the user submits the form, it prevents the default action and gets the values from the name, subject, email, and address fields. The "validation" function checks if the input field meets specific requirements using regular expressions. If the input is valid, the "submitContactForm" function is called, which sends the form data to a server.
+
+Overall, this assignment was very challenging, but I have learned a lot, and feel much more confident in Javascript. I look forward to learning more about Javascript.
 
 ## Getting Started
 
@@ -45,8 +55,8 @@ All of these todo's must be done to pass the asssignment.
 - [ ] End-user can search for a specific item.
 - [ ] End-user can filter the list.
 - [ ] End-user can sort list by;
-  - [ ] Name ascending order
-  - [ ] Name descending order
+- [ ] Name ascending order
+- [ ] Name descending order
 - [ ] Confirmation modal after custumer submits a successful contact form.
 - [ ] End-user can auto-fill the contact form using the browser auto-fill.
 - [ ] End-user can auto-fill the contact form using a password manager.
@@ -130,5 +140,5 @@ Make sure you go through this checklist before submitting your project to Moodle
 
 ## Authors
 
-- _YOURE_NAME_ (@_your_github_username_)
+- Sander Selfors (@sanderselfors)
 - Monde Sineke (@S3ak)

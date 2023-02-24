@@ -1,53 +1,60 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const characterResults = document.querySelector(".allcharacters");
+const searchInput = document.querySelector("#search");
 
-// TODO: Get DOM elements from the DOM
+searchInput.addEventListener("input", () => {
+  const searchQuery = searchInput.value.trim().toLowerCase();
+  filterCharacters(searchQuery);
+});
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+const GOTurl = "https://thronesapi.com/api/v2/Characters";
+let characterslist = [];
 
-// TODO: Fetch and Render the list to the DOM
+async function getCharacters() {
+  try {
+    const response = await fetch(GOTurl);
+    const json = await response.json();
 
-// TODO: Create event listeners for the filters and the search
+    characterResults.innerHTML = "";
 
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
+    characterslist = json;
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+    characterslist.forEach(function (character) {
+      characterResults.innerHTML += `
+      <a href="../details.html?id=${character.id}" class="charactercard">
+          <div class="image" style="background-image: url(${character.imageUrl});"></div>
+          <div class="details">
+          <h4 class="name">${character.fullName}</h4>
+          <p class="title">${character.title}</p>
+          <p class="family">${character.family}</p>                                                                                                                                                         
+          </div>
+      </a>
+      `;
+    });
+  } catch (error) {
+    characterResults.innerHTML = ("Something went wrong while fetching the API");
+  }
+}
+getCharacters();
 
-// TODO: Fetch an array of objects from the API
+function filterCharacters(query) {
+  const filteredCharacters = characterslist.filter(character =>
+    character.fullName.toLowerCase().includes(query) ||
+    character.title.toLowerCase().includes(query) ||
+    character.family.toLowerCase().includes(query)
+    );
 
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
+  characterResults.innerHTML = "";
 
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+  filteredCharacters.forEach(function (character) {
+    characterResults.innerHTML += `
+    <a href="../details.html?id=${character.id}" class="charactercard">
+        <div class="image" style="background-image: url(${character.imageUrl});"></div>
+        <div class="details">
+        <h4 class="name">${character.fullName}</h4>
+        <p class="title">${character.title}</p>
+        <p class="family">${character.family}</p>
+        </div>
+    </a>
+    `;
+  });
+}
